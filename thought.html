@@ -6,7 +6,8 @@
 </head>
 <body>
     <span>
-        <p>在 src/config/文件夹下有一个defaultSetting.js 文件，是来做布局的默认设置的，里面开头就已经列出您的可选配置，</p>
+        <p>在main.js入口文件中初始化了src/core/bootstrap.js和src/core/bootstrap.js两个文件来读取vue-ls中设置的配置项，如果没有读取到，则默认读取
+         src/config/文件夹下有一个 defaultSetting.js 文件，是来做布局的默认设置的，里面开头就已经列出您的可选配置。</p>
         <p>例如：<br/>
               项目默认配置项<br/>
               primaryColor - 默认主题色<br/>
@@ -22,7 +23,6 @@
             </p>
         <p>这些是默认配置项。</p>
         <p>启动项目，打开右边侧栏，可以选择配置项。</p>
-
     </span>
 </body>
 </html>
