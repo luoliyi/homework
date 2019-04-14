@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js web api原生复制</title>
+</head>
+<body>
+<div >
+    <p id="msg">my name is luoliyi</p>
+    <input id="panel" type="hidden"/>
+    <button onclick="toCopy()">复制</button>
+    <input type="text"/>
+</div>
+
+<script type="text/javascript">
+    function toCopy() {
+        var text = document.getElementById("msg").innerText;
+        var input = document.getElementById("panel");
+        input.value = text;
+        input.select();
+        document.execCommand("copy");
+        console.log("复制成功！")
+    }
+</script>
+</body>
+</html>

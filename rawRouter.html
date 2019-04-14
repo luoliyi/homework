@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试js原生路由</title>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a href="#/">首页</a>
+			</li>
+			<li>
+				<a href="#/product">产品</a>
+			</li>
+			<li>
+				<a href="#/myInfo">我的信息</a>
+			</li>
+		</ul>
+		<div id="page"></div>
+	</body>
+	<script>
+		function selfRouter() {
+			this.routes = [];
+			this.curUrl = '';
+
+			/*
+			 init 监听浏览器 url hash 更新事件
+			route 存储路由更新时的回调到回调数组routes中，回调函数将负责对页面的更新
+			refresh 执行当前url对应的回调函数，更新页面
+			 * */
+			// 我的路由器
+			this.myRoute = function(path, callback) {
+				this.routes[path] = callback || function() {};
+			};
+
+			this.myRefresh = function() {
+				this.curUrl = location.hash.slice(1) || '/';
+				console.log(this.curUrl);//product、server、/
+				this.routes[this.curUrl](); //根据当前的hash值来调用相对应的回调函数 
+			};
+
+			this.init = function() {
+				//第一个this:window。 第二个this:myRefresh
+				window.addEventListener('load', this.myRefresh.bind(this), false);
+				// 监听hashchange事件
+				window.addEventListener('hashchange', this.myRefresh.bind(this), false);
+			}
+		};
+
+		var R = new selfRouter();
+		//初始化
+		R.init();
+		var res = document.getElementById('page');
+
+		R.myRoute('/', function() {
+			res.style.background = 'blue';
+			res.innerHTML = '这是首页';
+		});
+		R.myRoute('/product', function() {
+			res.style.background = 'orange';
+			res.innerHTML = '这是产品页';
+		});
+		R.myRoute('/myInfo', function() {
+			res.style.background = 'red';
+			res.innerHTML = '这是个人信息';
+		});
+	</script>
+</html>
