@@ -9,12 +9,12 @@
 <div class="wrapper">
     <p id="msg">my name is luoliyi</p>
     <input id="panel" type="hidden"></input>
-    <button onclick="copyText()">复制</button>
+    <button onclick="toCopy()">复制</button>
     <input type="text"/>
 </div>
 
 <script type="text/javascript">
-    function copyText() {
+    function toCopy() {
         var msg = document.getElementById("msg").innerText;
         var input = document.getElementById("panel");
         input.value = msg;
