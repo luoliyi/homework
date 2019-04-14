@@ -3,4 +3,4 @@
 
 github地址：https://github.com/luoliyi/homework
 
-在线访问：http://www.luoliyi.cn:8080/homework/index.html
+在线访问：http://www.luoliyi.cn:8080/homework

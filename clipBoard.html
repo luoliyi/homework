@@ -6,23 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>js web api原生复制</title>
 </head>
-<body>
-<div >
+<div class="wrapper">
     <p id="msg">my name is luoliyi</p>
-    <input id="panel" type="hidden"/>
-    <button onclick="toCopy()">复制</button>
+    <input id="panel" type="hidden"></input>
+    <button onclick="copyText()">复制</button>
     <input type="text"/>
 </div>
 
 <script type="text/javascript">
-    function toCopy() {
-        var text = document.getElementById("msg").innerText;
+    function copyText() {
+        var msg = document.getElementById("msg").innerText;
         var input = document.getElementById("panel");
-        input.value = text;
+        input.value = msg;
         input.select();
         document.execCommand("copy");
-        console.log("复制成功！")
+        console.log("ok")
     }
 </script>
-</body>
 </html>
