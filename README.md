@@ -2,7 +2,8 @@
 ##### clipBoard.html：原生web api复制功能
 ##### rawRouter.html：原生js 路由跳转
 ##### ls.html：对localStorage的理解
-##### thought.html：对ant-desigin-vue 侧边栏布局实现追踪
+##### thought.html：对ant-desigin-vue 侧边栏布局实现的看法
+##### loading.html：对ant-desigin-vue loading动画实现的看法
 
 github地址：https://github.com/luoliyi/homework
 
